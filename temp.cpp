@@ -289,11 +289,13 @@ long long sumOfGoodNumbers(long long n) {
 }
 
 int main() {
-    long long n;
-    std::cin >> n;
+    // long long n;
+    // std::cin >> n;
 
-    long long result = sumOfGoodNumbers(n);
-    cout << result << endl;
+    // long long result = sumOfGoodNumbers(n);
+    // cout << result << endl;
+
+    cout << "Thank You Satish" << endl;
 
     return 0;
 }
