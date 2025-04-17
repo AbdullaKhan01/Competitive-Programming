@@ -1,0 +1,12 @@
+It's common for competitive programmers to use shortcuts (like macros) in their code to save time during contests. But when you're working on real projects, it's important to write code that's easy to understand and maintain. One way to do this is by following the SOLID principles. These principles are guidelines for writing good code and can impress recruiters when they look at your GitHub profile.
+
+Let me explain SOLID in simple terms:
+
+1. Single Responsibility: Each part of your code should do only one job. This makes it easier to update without breaking other things.
+2. Open-Closed: Your code should be easy to add to, but you shouldn’t need to change existing code. This helps prevent bugs.
+3. Liskov Substitution: When you replace one part of your code (like swapping out a piece in a machine), everything should still work as expected.
+4. Interface Segregation: Don’t force your code to depend on things it doesn’t need. It should be simple and focused.
+5. Dependency Inversion: Higher-level parts of your code shouldn’t rely on lower-level details. Both should depend on general rules.
+
+
+STAR method
