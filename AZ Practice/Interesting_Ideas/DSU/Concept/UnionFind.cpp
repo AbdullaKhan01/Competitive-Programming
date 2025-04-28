@@ -3,6 +3,28 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+/*
+Every node has a single parent
+
+find(x) finds the topmost parent of node x that does
+not have a parent
+
+merge(x,y) -> find(x) find(y) merge them 
+
+Rank Compression rank definition depends on use case
+rank = height
+rank = size 
+
+(smaller to larger) merging so can we do not form a chain
+
+
+rank[x] = size of representative of x
+
+max height of tree O(log n) complicated maths proof 
+available try to read about it
+
+Path Compression -> par[x] = find(par[x]) this line
+*/
 struct UnionFind
 {
 	int n,set_size;

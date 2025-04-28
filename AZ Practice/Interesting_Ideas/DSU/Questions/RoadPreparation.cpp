@@ -29,26 +29,34 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
 /*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
+Given a Graph G(V,E)
 
-Expected TC => O(|P| + |T|);
+every node has a value Ci and every edge has a value Di
 
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
+Ci is the cost for Activating the Power Plant at node V
+and Di is the cost for Activating the Road connecting the
+power plant between the edges now we want every
+Power Plant to have good either being made there or 
+reaching there through roads 
 
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
+find the minimum cost to do the whole setup 
+
+Solution -> Add a super node connect it to all the nodes
+and the edge cost will be Ci of the node now the MST
+of this New Graph is actually the solution
+
+why ? Because the super Node will actually be in the MST
+so consider the nodes connected directly to super node in 
+the MST of the new Graph as that Node Power Plant 
+getting activated by Paying Cost Ci hence the solution
+
+
 
 */
-
-void solve()
-{
-	// code it later
-		
+void solve(){
+	
 }
 signed main(){
 	fast_io();

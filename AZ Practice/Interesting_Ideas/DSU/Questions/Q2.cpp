@@ -29,26 +29,40 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
 /*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
 
-Expected TC => O(|P| + |T|);
+Given a Graph with nodes and edges each edge has some 
+distinct weight
 
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
+s(i,0,n) -> stands for summation i from 0 to N
 
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
+
+u need to find the s(i,0,N) s(j,i+1,N) d(i,j)
+
+basically all pairs sum of distance of node i and j
+
+and d(i,j) can be any function not only distance 
+
+let's suppose d(i,j) is minimum value in the path from 
+i to j
+
+So to solve this problem how to do it
+
+think about every edge contribution to the answer lets 
+say if we can find for every edge the no of paths in which
+that edge is the minimum then our answer is simply
+(edge * no of paths in which that edge is minimum) this 
+value added for each edge 
+
+We can do this by traversing edges in decresing order of 
+their weight 
+
 
 */
-
 void solve()
 {
-	// code it later
-		
+	
 }
 signed main(){
 	fast_io();

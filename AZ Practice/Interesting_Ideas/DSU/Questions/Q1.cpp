@@ -29,25 +29,28 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
 /*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
+Q). Given A Graph with N nodes and M queries in each query
+u are given an Edge x,y remove the edge from x to y
+and then print after each query the no of connected 
+components
 
-Expected TC => O(|P| + |T|);
+(1) A good way to solve this is to think in the reverse 
+direction for eg after removing all the edges there will
+be N nodes not connected to each other so the no of 
+connected components will be N then add edges in reverse
+direction and get the connected components finally print
+the answer in reverse direction
 
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
-
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
+also if not all edges are removed in the last then also
+we can keep a map of all the query edges now build the
+graph again without adding the edges from the queries 
+in the DSU and then simulate the above process no (1).
 
 */
 
-void solve()
-{
-	// code it later
+void solve(){
 		
 }
 signed main(){

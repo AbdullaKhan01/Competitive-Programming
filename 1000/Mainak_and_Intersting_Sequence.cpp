@@ -105,6 +105,8 @@ void solve(){
 
 }
 signed main(){
+	// 10 100101 11 2 + 1 + 2 + 2 + 2
+	// 10 101001 11 2 + 2 + 2 + 1 + 2
 	fast_io();
     int tt = 1;
     cin >> tt;

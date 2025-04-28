@@ -29,26 +29,60 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
 /*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
+Crazy Idea Unlocked
 
-Expected TC => O(|P| + |T|);
+ai * b = aj (1)
+&
+aj * b = ak (2)
 
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
+substitute value of aj in (2)
 
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
+we get ai * b * b = ak
+b * b = ak/ai
+b = sqrt(ak/ai)
+
+max b can be sqrt(10^6) which is 10^3
+
+
+so we can iterate for all b from 2 to 10^3
+for b = 1 we get ai = aj = ak
+so no of such pairs = freq[a[i]]C3 * 3!
 
 */
+const int MAXN = 1e6 + 6;
+vector<int> freq(MAXN);
+void solve(){
+	int n;cin >> n;
+	vector<int> a(n);
+	int maxi = 0;
+	for(int i=0;i<n;i++){
+		cin >> a[i];
+		maxi = max(maxi,a[i]);
+		freq[a[i]]++;
+	}
+	int ans = 0;
+	for(int i=0;i<n;i++){
+		// for b = 1
+		int p = freq[a[i]];
+		ans += (p-1) * (p-2);
 
-void solve()
-{
-	// code it later
-		
+		for(int b=2;b<=1000;b++){
+			// for a[i] j = ai * b
+			// k = a[i] * b * b
+			int aj = a[i] * b;
+			int ak = aj * b;
+			if(aj <= maxi && ak <= maxi){
+				ans += freq[a[i] * b] * freq[a[i] * b * b];	
+			}
+			
+		}
+	}
+	cout << ans << endl;
+	for(int i=0;i<n;i++){
+		freq[a[i]]--;
+	}
 }
 signed main(){
 	fast_io();

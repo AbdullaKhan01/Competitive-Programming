@@ -5,6 +5,35 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
+/*
+
+Find Minimum Spanning Tree (MST) sum of edge weights
+is minimum
+
+2 algorithms
+
+Kruskal's Algo
+Prim's Algo
+
+we will learn Kruskal's Algo
+
+1.sort edges based on weight
+2.iterate on edges if edges not connected add that 
+edge otherwise skip
+
+this is just the Algorithm and we will have the final
+Minimum Spanning Tree
+
+G(V,E)
+Time Complexity -> O(ElogE + (E+V)alpha(V))
+
+ElogE -> sorting edges
+(E+V) alpha V -> find and merge for each edge
+
+*/
+
+
 struct UnionFind
 {
 	int n,set_size;
@@ -100,7 +129,7 @@ void solve()
 		}
 	}
 
-	if(cnt != n-1)
+	if(cnt != n-1) // because there are n-1 edges in tree
 	{
 		cout << "IMPOSSIBLE\n";
 		return;

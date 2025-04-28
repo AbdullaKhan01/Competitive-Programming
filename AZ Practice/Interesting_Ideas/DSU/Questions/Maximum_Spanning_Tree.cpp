@@ -29,26 +29,25 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
+
 /*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
+Find the Maximum Spanning Tree of a Graph
 
-Expected TC => O(|P| + |T|);
+2 ways 
 
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
+1.modify Kruskal and sort in decending order
+2.modify graph for each edge a , b , c 
+a to b with weight c 
+add edge a , b , - c
+a to b with weight -c and find Minimum Spanning Tree
+the final answer for Maximum Spanning Tree will be 
+-mst_cost 
 
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
 
 */
-
 void solve()
 {
-	// code it later
-		
+	
 }
 signed main(){
 	fast_io();

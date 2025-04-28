@@ -29,28 +29,57 @@ using namespace std;
 /* 
 for fast input output use printf and scanf;
 */
-/*
-Question -> Given a Pattern P and a Text T
-find all occurences of the Pattern in the Text in linear
-time 
+// Read Question Properly 
+// Don't be afraid to derive mathematical formulas
+// Had to take hint from Editorial
 
-Expected TC => O(|P| + |T|);
-
-Approach -> Just Make a new String NS = P + '#' + T and 
-find the KMP array of this String NS
-
-in the KMP array the indexes where KMP[i] = P.length()
-are the points where Pattern P occures and it's basically
-the ending point of the Pattern at that index
-
-*/
-
-void solve()
-{
-	// code it later
-		
+// Solution to 2^x - 2^y is unique if x,y >= 0 and y < x
+map<int,pair<int,int>> mp;
+void precompute(){
+	for(int x=0;x<32;x++){
+		for(int y=0;y<32;y++){
+			mp[(1<<x) - (1<<y)] = make_pair(x,y);
+		}
+	}
 }
+void solve(){
+	int n;cin >> n;
+	vector<int> a(n);
+	int sum = 0;
+	for(int i=0;i<n;i++){
+		cin >> a[i];
+		sum += a[i];
+	}
+	if(sum % n != 0){
+		cout << "No" << endl;
+		return ;
+	}
+	int val = sum / n;
+	// a[i] + 2^x - 2^y = val
+	// 2^x - 2^y = val - a[i]
+	map<int,int> ans;
+	for(int i=0;i<n;i++){
+		int d = val - a[i];
+		if(d == 0) continue;
+		if(mp.find(d) == mp.end()){
+			cout << "No" << endl;
+			return;
+		}
+		pair<int,int> x = mp[d];
+		ans[x.first]--;
+		ans[x.second]++;
+	}
+	for(auto it : ans){
+		if(it.second != 0){
+			cout << "No" << endl;
+			return ;
+		}
+	}
+	cout << "Yes" << endl;
+}
+
 signed main(){
+	precompute();
 	fast_io();
     int tt = 1;
     cin >> tt;
